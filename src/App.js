@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import Quiz from './Components/Quiz'
+import Result from './Components/Result'
+import Start from './Components/Start'
+import QuizHolder from './Context/QuizHolder'
+import {QuizContext} from './Context/QuizHolder'
+import { useContext } from 'react'
+import "./App.css"
+import { Progress } from 'antd'
 
-function App() {
+const App = () => {
+  const{start,exit}=useContext(QuizContext)
+   
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+    {
+      exit===false
+      ?
+      <>
+      {
+      start === true
+      ? 
+      <Quiz/>
+      :
+      <Start/>
+      }
+      </>
+      :
+    <Result/>
+    }
+    <Progress/>
+    </>
+  )
 }
 
-export default App;
+export default App
