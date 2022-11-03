@@ -54,7 +54,7 @@ const Box = ({current,handler}) =>{
     return(
         <>
         <h3 id='headtext'>CLICK ON AN OPTION AND THEN CLICK NEXT</h3>
-        <div className="container" style={{width:"60%",minHeight:"600px",marginTop:"10%", marginLeft:"20%", boxShadow:"0px 3px 11px 7px black"}}>
+        <div className="container" style={{width:"60%",minHeight:"600px",marginTop:"7%", marginLeft:"20%", boxShadow:"0px 3px 11px 7px black"}}>
                 
               <ProgressBar Percent={Percent + '%'}/>
                 <div className="question">Questions {current+1} of 20</div>
